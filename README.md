@@ -23,7 +23,7 @@ SCIP-system/
 |---|---|
 | `SCIP Hardware.zip` | Hardware design files of the SCIP device, including circuit design related to power management, core controller, ECG acquisition, SCG sensing, WCT module, and external expansion interfaces. |
 | `SCIP Firmware.zip` | Embedded firmware for the SCIP hardware platform. It is responsible for sensor initialization, physiological data acquisition, signal packaging, wireless communication, and interaction with the mobile application. |
-| `SCIP APP.zip` | Android application project for real-time physiological monitoring, data visualization, user information management, Bluetooth/NFC communication, and physiological parameter calculation. |
+| `SCIP APP.zip` | Android application project for real-time physiological monitoring, data visualization, user information management, Bluetooth communication, and physiological parameter calculation. |
 | `LICENSE` | MIT License file. |
 | `README.md` | Project introduction and usage documentation. |
 
