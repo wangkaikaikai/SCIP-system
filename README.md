@@ -40,7 +40,7 @@ SCIP-system is composed of three main layers:
    The firmware runs on the embedded controller and controls the acquisition, preprocessing, and transmission of physiological signals. It provides the communication bridge between the hardware sensors and the Android application.
 
 3. **SCIP APP**  
-   The Android application receives physiological data through Bluetooth and/or NFC, performs data visualization and processing, and provides user-facing monitoring functions such as ECG display, respiratory signal analysis, heart rate calculation, and data recording.
+   The Android application receives physiological data through Bluetooth, performs data visualization and processing, and provides user-facing monitoring functions such as ECG display, SCG signal display, heart rate calculation, and data recording.
 
 ---
 
@@ -68,7 +68,6 @@ The core module is based on an embedded wireless microcontroller platform. It is
 - Data acquisition
 - Data processing
 - Bluetooth communication
-- NFC-related interaction if supported
 - Communication with the Android application
 
 The core module also provides GPIO, SPI, I2C, ADC, and other interfaces for connecting different sensing and expansion modules.
@@ -87,7 +86,7 @@ Main functions include:
 
 ### 4. WCT Module
 
-The WCT module is used as part of the ECG reference and signal stabilization design. It helps improve ECG acquisition quality by providing a reference-related circuit structure for physiological signal measurement.
+The WCT module is designed to provide wireless charging for the SCIP system.
 
 ### 5. SCG Module
 
