@@ -90,13 +90,13 @@ The WCT module is designed to provide wireless charging for the SCIP system.
 
 ### 5. SCG Module
 
-The SCG module is used for mechanical cardiac activity sensing. It usually relies on motion or vibration sensing components to acquire seismocardiography-related signals.
+The SCG module is used for mechanical cardiac activity sensing. It relies on motion sensing components to acquire seismocardiography-related signals.
 
 Main functions include:
 
 - SCG signal acquisition
 - Motion or vibration sensing
-- I2C/SPI communication with the core controller
+- I2C communication with the core controller
 - Support for mechanical cardiac activity analysis
 
 ### 6. Expansion Interfaces
@@ -121,16 +121,15 @@ Main functions include:
 
 - Hardware initialization
 - Sensor configuration
-- ECG, SCG, respiratory, PPG, or other physiological data acquisition
+- ECG, SCG data acquisition
 - Data buffering and packaging
 - Bluetooth communication with the Android application
-- NFC-related communication if enabled
 - System status monitoring
-- Low-power or battery-related control
+- Low-power control
 
 The firmware should be uploaded to the SCIP hardware after compiling with the corresponding embedded development environment.
 
-> **Note:** Please check the files inside `SCIP Firmware.zip` for the exact development framework, such as ESP-IDF, Arduino, PlatformIO, Keil, or other supported toolchains.
+> **Note:** Please check the files inside `SCIP Firmware.zip` for the exact development framework: PlatformIO.
 
 ---
 
@@ -140,16 +139,15 @@ The firmware should be uploaded to the SCIP hardware after compiling with the co
 
 ### Main Features
 
-- Communication with external SCIP device through Bluetooth and NFC
+- Communication with external SCIP device through Bluetooth
 - Real-time physiological data acquisition
 - ECG waveform display
-- Respiratory signal monitoring
-- PPG and blood oxygen-related data processing
-- Heart rate and respiratory rate calculation
+- SCG signal monitoring
+- Heart rate calculation
 - Data visualization
 - User information management
 - CSV data recording and export
-- Algorithm-based signal processing, such as moving average smoothing, calibration, and respiratory rate estimation
+- Algorithm-based signal processing, such as moving average smoothing, calibration.
 
 ### Main Components
 
@@ -157,9 +155,9 @@ The Android application contains several functional modules:
 
 | Component | Description |
 |---|---|
-| Dataset modules | Store and manage physiological data such as ECG, respiratory, and PPG signals. |
-| Algorithm modules | Implement signal processing algorithms, including heart rate calibration, moving average smoothing, and respiratory rate calculation. |
-| Peripheral modules | Manage Bluetooth, NFC, CSV recording, and external device interaction. |
+| Dataset modules | Store and manage physiological data such as ECG, SCG signals. |
+| Algorithm modules | Implement signal processing algorithms, including heart rate calibration, moving average smoothing. |
+| Peripheral modules | Manage Bluetooth, CSV recording, and external device interaction. |
 | UI modules | Provide user interfaces such as main page, information page, homepage, gallery page, and slideshow page. |
 
 ---
@@ -175,7 +173,7 @@ SCIP Hardware Sensors
         ↓
 Embedded Firmware
         ↓
-Bluetooth / NFC Communication
+Bluetooth Communication
         ↓
 SCIP Android APP
         ↓
@@ -185,9 +183,6 @@ Signal Display, Data Storage, and Physiological Parameter Analysis
 Typical monitored signals include:
 
 - ECG
-- Respiratory signal
-- PPG signal
-- Blood oxygen-related signal
 - SCG signal
 - Heart rate
 - Respiratory rate
@@ -222,12 +217,9 @@ unzip "SCIP Hardware.zip"
 
 Open the hardware design files using the corresponding EDA software.
 
-Depending on the file format, possible tools include:
+Depending on the file format, tool used is:
 
-- Altium Designer
-- KiCad
-- EasyEDA
-- Or other PCB design software
+- Altium Designer 21
 
 Please check the schematic, PCB layout, BOM, and fabrication files before manufacturing the device.
 
@@ -243,14 +235,9 @@ unzip "SCIP Firmware.zip"
 
 Open the firmware project using the corresponding development environment.
 
-Possible development environments include:
+development environment used is :
 
-- ESP-IDF
-- Arduino IDE
 - PlatformIO
-- Keil
-- STM32CubeIDE
-- Other embedded development tools
 
 Before compiling and flashing, please check:
 
@@ -258,7 +245,7 @@ Before compiling and flashing, please check:
 - Board configuration
 - Pin definition
 - Sensor communication interface
-- Bluetooth/NFC configuration
+- Bluetooth configuration
 - Sampling rate settings
 - Data packet format
 
@@ -281,7 +268,6 @@ Requirements:
 - Android Studio
 - Android SDK
 - Android device with Bluetooth support
-- Android device with NFC support if NFC functions are used
 - SCIP hardware device
 
 Steps:
@@ -289,7 +275,7 @@ Steps:
 1. Open Android Studio.
 2. Import the `SCIP APP` project.
 3. Connect an Android phone.
-4. Enable Bluetooth and NFC permissions.
+4. Enable Bluetooth permissions.
 5. Build and run the APP.
 6. Connect the APP with the SCIP device.
 7. Start physiological signal acquisition and monitoring.
@@ -300,10 +286,9 @@ Steps:
 
 The SCIP device communicates with the Android APP mainly through wireless interfaces.
 
-Supported communication methods may include:
+Supported communication methods include:
 
 - Bluetooth Low Energy
-- NFC
 - Serial debugging interface
 - External expansion interface
 
@@ -317,8 +302,7 @@ The system supports multiple signal processing functions, including:
 
 - ECG waveform processing
 - Heart rate calculation
-- Respiratory waveform analysis
-- Respiratory rate estimation
+- SCG signal monitoring
 - Moving average filtering
 - Calibration and smoothing
 - CSV data recording
@@ -334,7 +318,6 @@ SCIP-system can be used in the following scenarios:
 
 - Wearable physiological monitoring
 - Real-time ECG monitoring
-- Respiratory monitoring
 - Portable health sensing
 - Multimodal physiological signal acquisition
 - Academic research and prototype validation
