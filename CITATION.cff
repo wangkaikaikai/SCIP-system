@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this system when using the SCIP-system project."
+type: software
+title: "AI-enhanced skin-conformal integrated patch for physiological monitoring and heart disease diagnosis in intensive care units"
+authors:
+  - family-names: Wang
+    given-names: Kaikai
+version: 1.0.0
+repository-code: "https://github.com/wangkaikaikai/SCIP-system"
+license: MIT
